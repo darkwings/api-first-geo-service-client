@@ -21,6 +21,7 @@ public class GeoResource {
     DefaultApi defaultApi;
 
     @GET
+    @Path("italian-countries")
     @Produces(MediaType.APPLICATION_JSON)
     public GeoResult countriesInItalianLang() {
         var resp = defaultApi.getCountries("it", new BigDecimal(0), new BigDecimal(10));
