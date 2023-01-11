@@ -23,7 +23,7 @@ public class GeoResource {
     @Path("countries-in-italian-language")
     @Produces(MediaType.APPLICATION_JSON)
     public GeoResult countriesInItalianLang() {
-        var resp = defaultApi.getCountries("it", 0, 10);
+        var resp = defaultApi.getCountries("it", 0, 10, "application/x.wefox.api+json;version=1");
         var list = resp.getData();
         return new GeoResult(list.size(), list.stream().map(Country::getName).toList());
     }
